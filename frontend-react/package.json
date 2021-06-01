@@ -4,12 +4,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "libarchive": "(cd public; rm wasm-gen worker-bundle.js; ln -s ../node_modules/libarchive.js/dist/wasm-gen; ln -s ../node_modules/libarchive.js/dist/worker-bundle.js);",
+    "postinstall": "npm run libarchive"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "clsx": "^1.1.1",
+    "libarchive.js": "^1.3.0",
     "nanoid": "^3.1.23",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
