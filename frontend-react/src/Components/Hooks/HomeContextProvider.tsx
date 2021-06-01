@@ -1,8 +1,9 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment, useState } from "react";
+import { IHomeContextState as IState } from "../../types/IHomeContextState";
 import { HomeContext } from "./HomeContext";
-import { IHomeContextState } from "./IHomeContextState";
 
 export const HomeContextProvider: FC = ({ children }) => {
+  const [archives, setArchives] = useState<IState["archives"]>([]);
 
   return (
     <Fragment
