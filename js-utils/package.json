@@ -1,0 +1,24 @@
+{
+  "name": "js-utils",
+  "version": "0.0.0",
+  "description": "Bibliotecas uteis para o desenvolvimento do projeto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf build && tsc -p .",
+    "postinstall": "npm run build"
+  },
+  "author": "Gabriel Rodrigues <jipacoding@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guesant/lp-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guesant/lp-utils/issues"
+  },
+  "homepage": "https://github.com/guesant/lp-utils#readme",
+  "devDependencies": {
+    "typescript": "^4.3.2"
+  }
+}
