@@ -20,5 +20,8 @@
   "homepage": "https://github.com/guesant/lp-utils#readme",
   "devDependencies": {
     "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "dot-prop": "^6.0.1"
   }
 }
