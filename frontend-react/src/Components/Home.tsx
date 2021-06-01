@@ -6,7 +6,7 @@ import { HomeContextProvider } from "./Hooks/HomeContextProvider";
 function Home() {
   return (
     <HomeContextProvider>
-      <div className="tw-h-full tw-flex tw-flex-col">
+      <div className="tw-h-full tw-overflow-hidden tw-flex tw-flex-col">
         <HomeToolbar />
         <HomeContent />
       </div>
