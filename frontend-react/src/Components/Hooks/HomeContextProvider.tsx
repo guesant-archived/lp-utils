@@ -4,6 +4,7 @@ import { HomeContext } from "./HomeContext";
 
 export const HomeContextProvider: FC = ({ children }) => {
   const [archives, setArchives] = useState<IState["archives"]>([]);
+  const [viewMode, setViewMode] = useState<IState["viewMode"]>("important");
 
   return (
     <Fragment
