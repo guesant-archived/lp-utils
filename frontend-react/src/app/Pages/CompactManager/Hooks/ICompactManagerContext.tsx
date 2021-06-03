@@ -5,8 +5,11 @@ type ISet<T> = (value: T) => void;
 export type ICompactManagerContext = {
   archives: IArchiveRecord[];
   setArchives: ISet<IArchiveRecord[]>;
-  searchFilesByName: string | null;
-  setSearchFilesByName: ISet<string | null>;
+  removeArchiveById: (idOfArchiveToRemove: string) => void;
+
   isSettingsModalOpen: boolean;
   setIsSettingsModalOpen: ISet<boolean>;
+
+  searchFilesByName: string | null;
+  setSearchFilesByName: ISet<string | null>;
 };

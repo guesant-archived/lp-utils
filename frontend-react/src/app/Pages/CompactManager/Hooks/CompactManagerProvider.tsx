@@ -1,24 +1,31 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { IArchiveRecord } from "../../../../utils/getArchiveRecordFromFile";
 import { CompactManagerContext } from "./CompactManagerContext";
 
-export const CompactManagerProvider: React.FC = (props) => {
-  const { children } = props;
-
+export const CompactManagerProvider: React.FC = ({ children }) => {
   const [searchFilesByName, setSearchFilesByName] =
     useState<string | null>(null);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
   const [archives, setArchives] = useState<IArchiveRecord[]>([]);
+
+  const removeArchiveById = useCallback(
+    (archiveId: string) =>
+      void setArchives(archives.filter(({ id }) => id !== archiveId)),
+    [archives],
+  );
 
   return (
     <CompactManagerContext.Provider
       value={{
         archives,
         setArchives,
-        isSettingsModalOpen,
-        setIsSettingsModalOpen,
+        removeArchiveById,
+
         searchFilesByName,
         setSearchFilesByName,
+
+        isSettingsModalOpen,
+        setIsSettingsModalOpen,
       }}
       children={children}
     />
