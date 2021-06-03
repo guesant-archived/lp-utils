@@ -6,6 +6,7 @@ import {
   Redirect,
   BrowserRouter as Router,
 } from "react-router-dom";
+import PageCompactManager from "./app/Pages/CompactManager";
 
 const App = () => {
   return (
@@ -13,7 +14,11 @@ const App = () => {
       <CssBaseline />
       <div className="App tw-h-full">
         <Switch>
+          <Route path="/tools/compacted">
+            <PageCompactManager />
+          </Route>
           <Route path="">
+            <Redirect to="/tools/compacted" />
           </Route>
         </Switch>
       </div>
