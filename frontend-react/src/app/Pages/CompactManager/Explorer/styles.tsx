@@ -1,4 +1,3 @@
-import { createStyles, makeStyles } from "@material-ui/core";
 import React from "react";
 
 export function StyledCompactExplorerSideBar({ children }: any) {
