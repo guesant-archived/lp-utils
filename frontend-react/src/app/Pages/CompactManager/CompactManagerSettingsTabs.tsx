@@ -7,6 +7,9 @@ import { StyledCompactManagerSettingsTabs, TabPanel } from "./styles";
 const CompactManagerSettingsGeneral = loadable(
   () => import("./Settings/SettingsGeneral"),
 );
+const CompactManagerSettingsRenderer = loadable(
+  () => import("./Settings/SettingsRenderer"),
+);
 
 export type ICompactManagerSettingsTabsProps = {
   currentTabIndex: number;
@@ -27,9 +30,13 @@ export function CompactManagerSettingsTabs(
           onChange={(_, idx) => handleCurrentTabChange(idx)}
         >
           <Tab label="Geral" />
+          <Tab label="Renderizadores" />
         </Tabs>
         <TabPanel value={currentTabIndex} index={0}>
           <CompactManagerSettingsGeneral />
+        </TabPanel>
+        <TabPanel value={currentTabIndex} index={1}>
+          <CompactManagerSettingsRenderer />
         </TabPanel>
       </StyledCompactManagerSettingsTabs>
     </>
