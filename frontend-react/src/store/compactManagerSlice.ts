@@ -5,6 +5,8 @@ import { IStoreState } from "./IStoreState";
 
 const initialState: ICompactManagerState = {
   config: {
+    renderers: [
+    ],
     viewMode: "important",
     configQuery: [
     ],
