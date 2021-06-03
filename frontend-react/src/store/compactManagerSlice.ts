@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { formatCompactManagerConfig } from "../utils/formatCompactManagerConfig";
 import { ICompactManagerState } from "./ICompactManagerState";
 import { IStoreState } from "./IStoreState";
 
 const initialState: ICompactManagerState = {
   config: {
     viewMode: "important",
-    importantFilesDefinition: [
+    configQuery: [
     ],
   },
 };
@@ -15,7 +16,7 @@ export const compactManagerSlice = createSlice({
   initialState,
   reducers: {
     setConfig(state, action) {
-      state.config = action.payload;
+      state.config = formatCompactManagerConfig(action.payload);
     },
   },
 });
