@@ -2,7 +2,7 @@ import React from "react";
 import CompactManagerSettings from "./CompactManagerSettings";
 import { CompactManagerContent } from "./CompactManagerContent";
 import { CompactManagerToolbar } from "./CompactManagerToolbar";
-import { CompactManagerProvider } from "./Hooks/CompactManagerProvider";
+import { CompactManagerProvider } from "./Hooks/CompactManagerContext";
 
 export default function CompactManager() {
   return (

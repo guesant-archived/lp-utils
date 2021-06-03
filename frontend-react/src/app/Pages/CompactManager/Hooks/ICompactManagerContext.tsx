@@ -1,15 +1,13 @@
 import { IArchiveRecord } from "../../../../utils/getArchiveRecordFromFile";
 
-type ISet<T> = (value: T) => void;
-
 export type ICompactManagerContext = {
   archives: IArchiveRecord[];
-  setArchives: ISet<IArchiveRecord[]>;
+  setArchives: (value: IArchiveRecord[]) => void;
   removeArchiveById: (idOfArchiveToRemove: string) => void;
 
   isSettingsModalOpen: boolean;
-  setIsSettingsModalOpen: ISet<boolean>;
+  setIsSettingsModalOpen: (value: boolean) => void;
 
   searchFilesByName: string | null;
-  setSearchFilesByName: ISet<string | null>;
+  setSearchFilesByName: (value: string | null) => void;
 };
