@@ -1,11 +1,14 @@
+import loadable from "@loadable/component";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import React from "react";
-import { CompactManagerSettingsGeneral } from "./Settings/SettingsGeneral";
-import { CompactManagerSettingsRenderer } from "./Settings/SettingsRenderer";
-import { StyledCompactManagerSettingsTabs } from "./styles";
+import { StyledCompactManagerSettingsTabs, TabPanel } from "./styles";
 
-type ICompactManagerSettingsTabsProps = {
+const CompactManagerSettingsGeneral = loadable(
+  () => import("./Settings/SettingsGeneral"),
+);
+
+export type ICompactManagerSettingsTabsProps = {
   currentTabIndex: number;
   handleCurrentTabChange: (value: number) => void;
 };
@@ -23,7 +26,11 @@ export function CompactManagerSettingsTabs(
           value={currentTabIndex}
           onChange={(_, idx) => handleCurrentTabChange(idx)}
         >
+          <Tab label="Geral" />
         </Tabs>
+        <TabPanel value={currentTabIndex} index={0}>
+          <CompactManagerSettingsGeneral />
+        </TabPanel>
       </StyledCompactManagerSettingsTabs>
     </>
   );
