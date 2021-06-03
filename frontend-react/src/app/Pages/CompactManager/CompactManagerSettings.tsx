@@ -1,6 +1,7 @@
 import Dialog from "@material-ui/core/Dialog";
 import React from "react";
 import { CompactManagerSettingsHeader } from "./CompactManagerSettingsHeader";
+import { CompactManagerSettingsTabs } from "./CompactManagerSettingsTabs";
 import { useCompactManagerContext } from "./Hooks/useCompactManagerContext";
 
 export default function CompactManagerSettings() {
@@ -19,6 +20,10 @@ export default function CompactManagerSettings() {
       onClose={closeSettingsModal}
     >
       <CompactManagerSettingsHeader onClose={closeSettingsModal} />
+      <CompactManagerSettingsTabs
+        currentTabIndex={currentTabIndex}
+        handleCurrentTabChange={setCurrentTabIndex}
+      />
     </Dialog>
   );
 }
