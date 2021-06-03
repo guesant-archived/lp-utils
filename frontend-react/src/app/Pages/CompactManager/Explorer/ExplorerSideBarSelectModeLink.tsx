@@ -23,7 +23,7 @@ const useStylesExplorerSideBarSelectMode = makeStyles((theme) =>
   }),
 );
 
-export function ExplorerSideBarSelectModeLink(
+export default function ExplorerSideBarSelectModeLink(
   props: IExplorerSideBarSelectModeLinkProps,
 ) {
   const { icon, navProps } = props;
