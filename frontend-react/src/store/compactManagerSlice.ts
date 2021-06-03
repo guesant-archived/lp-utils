@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ICompactManagerState } from "./ICompactManagerState";
-import { IStoreState } from "./store";
+import { IStoreState } from "./IStoreState";
 
 const initialState: ICompactManagerState = {
   config: {
