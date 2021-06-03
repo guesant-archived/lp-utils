@@ -6,7 +6,9 @@ import {
   Redirect,
   BrowserRouter as Router,
 } from "react-router-dom";
-import PageCompactManager from "./app/Pages/CompactManager";
+import loadable from "@loadable/component";
+
+const PageCompactManager = loadable(() => import("./app/Pages/CompactManager"));
 
 const App = () => {
   return (
