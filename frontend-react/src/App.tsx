@@ -1,13 +1,23 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
 import React from "react";
-import Home from "./Components/Home";
+import {
+  Route,
+  Switch,
+  Redirect,
+  BrowserRouter as Router,
+} from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="App tw-h-full">
+    <Router>
       <CssBaseline />
-      <Home />
-    </div>
+      <div className="App tw-h-full">
+        <Switch>
+          <Route path="">
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
