@@ -6,8 +6,8 @@ import React from "react";
 import { useCompactManagerContext } from "../../Hooks/useCompactManagerContext";
 
 export function ActionCloseAllArchives() {
-  const { setArchives } = useCompactManagerContext();
-  const handleClick = () => setArchives([]);
+  const { setOpenedFiles } = useCompactManagerContext();
+  const handleClick = () => setOpenedFiles([]);
   return (
     <>
       <List dense>

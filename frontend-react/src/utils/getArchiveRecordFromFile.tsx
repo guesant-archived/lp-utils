@@ -1,8 +1,8 @@
 import { nanoid } from "nanoid";
 
-export type IArchiveRecord = { id: string; file: File };
+export type IOpenedFileRecord = { id: string; file: File };
 
-export const getArchiveRecordFromFile = (file: File): IArchiveRecord => ({
+export const getOpenedFileRecordFromFile = (file: File): IOpenedFileRecord => ({
   file,
   id: nanoid(),
 });

@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState } from "react";
-import { IArchiveRecord } from "../../../../utils/getArchiveRecordFromFile";
+import { IOpenedFileRecord } from "../../../../utils/getArchiveRecordFromFile";
 import { ICompactManagerContext } from "./ICompactManagerContext";
 
 export const CompactManagerContext = createContext<ICompactManagerContext>(
@@ -10,20 +10,20 @@ export const CompactManagerProvider: React.FC = ({ children }) => {
   const [searchFilesByName, setSearchFilesByName] =
     useState<string | null>(null);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
-  const [archives, setArchives] = useState<IArchiveRecord[]>([]);
+  const [openedFiles, setOpenedFiles] = useState<IOpenedFileRecord[]>([]);
 
-  const removeArchiveById = useCallback(
+  const removeOpenedFileById = useCallback(
     (archiveId: string) =>
-      void setArchives(archives.filter(({ id }) => id !== archiveId)),
-    [archives],
+      void setOpenedFiles(openedFiles.filter(({ id }) => id !== archiveId)),
+    [openedFiles],
   );
 
   return (
     <CompactManagerContext.Provider
       value={{
-        archives,
-        setArchives,
-        removeArchiveById,
+        openedFiles,
+        setOpenedFiles,
+        removeOpenedFileById,
 
         searchFilesByName,
         setSearchFilesByName,

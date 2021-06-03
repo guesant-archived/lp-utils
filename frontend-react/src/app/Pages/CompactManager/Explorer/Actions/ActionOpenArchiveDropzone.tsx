@@ -3,7 +3,7 @@ import ListItem from "@material-ui/core/ListItem";
 import clsx from "clsx";
 import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import { getArchiveRecordFromFile } from "../../../../../utils/getArchiveRecordFromFile";
+import { getOpenedFileRecordFromFile } from "../../../../../utils/getArchiveRecordFromFile";
 import { useCompactManagerContext } from "../../Hooks/useCompactManagerContext";
 import { ActionOpenArchiveDropzoneButton } from "./ActionOpenArchiveDropzoneButton";
 import { useStylesOpenArchive } from "./styles";
@@ -28,11 +28,13 @@ const StyledActionOpenArchiveDropzone: React.FC<{
 };
 
 export function ActionOpenArchiveDropzone() {
-  const { setArchives } = useCompactManagerContext();
+  const { setOpenedFiles } = useCompactManagerContext();
 
   const updateOpenedArchives = useCallback((selectedFiles: File[] | null) => {
-    const files = Array.from(selectedFiles || []).map(getArchiveRecordFromFile);
-    setArchives(files);
+    const files = Array.from(selectedFiles || []).map(
+      getOpenedFileRecordFromFile,
+    );
+    setOpenedFiles(files);
   }, []);
 
   const dropState = useDropzone({

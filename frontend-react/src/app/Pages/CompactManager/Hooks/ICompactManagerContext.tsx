@@ -1,9 +1,9 @@
-import { IArchiveRecord } from "../../../../utils/getArchiveRecordFromFile";
+import { IOpenedFileRecord } from "../../../../utils/getArchiveRecordFromFile";
 
 export type ICompactManagerContext = {
-  archives: IArchiveRecord[];
-  setArchives: (value: IArchiveRecord[]) => void;
-  removeArchiveById: (idOfArchiveToRemove: string) => void;
+  openedFiles: IOpenedFileRecord[];
+  setOpenedFiles: (value: IOpenedFileRecord[]) => void;
+  removeOpenedFileById: (idOfArchiveToRemove: string) => void;
 
   isSettingsModalOpen: boolean;
   setIsSettingsModalOpen: (value: boolean) => void;
