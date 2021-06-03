@@ -1,6 +1,8 @@
+export type ICompactManagerViewModesState = "all" | "important";
+
 export type ICompactManagerState = {
   config: {
-    importantFilesDefinition: string[];
-    viewMode: "all" | "important";
+    configQuery: string[];
+    viewMode: ICompactManagerViewModesState;
   };
 };
