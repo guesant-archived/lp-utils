@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IArchiveRecord } from "../../../../types/IArchiveRecord";
+import { IArchiveRecord } from "../../../../utils/getArchiveRecordFromFile";
 import { CompactManagerContext } from "./CompactManagerContext";
 
 export const CompactManagerProvider: React.FC = (props) => {

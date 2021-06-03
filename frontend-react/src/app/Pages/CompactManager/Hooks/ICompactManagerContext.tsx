@@ -1,4 +1,4 @@
-import { IArchiveRecord } from "../../../../types/IArchiveRecord";
+import { IArchiveRecord } from "../../../../utils/getArchiveRecordFromFile";
 
 type ISet<T> = (value: T) => void;
 
