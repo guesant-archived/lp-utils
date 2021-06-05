@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import CompactExplorerSideBar from "./ExplorerSideBar";
 import ExplorerSideBarSelectMode from "./ExplorerSideBarSelectMode";
 
-const ExplorerCompare = loadable(() => import("./Compare/ExplorerCompare"));
+const Compare = loadable(() => import("./Compare/Compare"));
 
 export default function CompactExporer() {
   return (
@@ -16,14 +16,14 @@ export default function CompactExporer() {
       >
         <ExplorerSideBarSelectMode />
         <Divider orientation="vertical" />
-        <div style={{ width: 330 }}>
+        <div className="tw-overflow-hidden" style={{ width: 330 }}>
           <CompactExplorerSideBar />
         </div>
         <Divider orientation="vertical" />
-        <div>
+        <div className="tw-overflow-hidden">
           <Switch>
             <Route path="/tools/compacted/compare">
-              <ExplorerCompare />
+              <Compare />
             </Route>
             <Route path="/tools/compacted" exact />
           </Switch>
